@@ -85,3 +85,18 @@ button:hover{
     background:#023e8a;
     transform:scale(1.05);
 }
+.button{
+    margin-top:30px;
+}
+
+.secondary{
+    background:white;
+    color:#0077b6;
+    border:2px solid #0077b6;
+    margin-left:15px;
+}
+
+.secondary::hover{
+    background:0077b6;
+    color:white;
+}
