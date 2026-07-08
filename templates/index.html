@@ -1,44 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>RentWise AI Botswana</title>
 
-    <link rel="stylesheet"
-          href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
+
 <body>
 
+    <!-- Navigation -->
     <nav>
+
         <div class="logo">🏠 RentWise AI Botswana</div>
 
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Properties</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="#properties">Properties</a></li>
             <li><a href="#">About</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
+
     </nav>
 
+    <!-- Hero Section -->
     <section class="hero">
 
         <div class="hero-text">
+
             <h1>Find Your Perfect Home with AI</h1>
 
             <p>
                 RentWise AI Botswana helps tenants discover affordable,
-                verified and AI-powered rental recommendations across Botswana.
+                verified rental properties across Botswana using Artificial Intelligence.
             </p>
 
-        </div class="buttons">
-             <button>Get Started</button>
-             <button class="secondary">Explore
-        Properties</button>
-             </div>
+            <button>Get Started</button>
+
+        </div>
 
     </section>
 
+    <!-- Search Section -->
+    <section class="search-section">
+
+        <form method="GET" action="/">
+
+            <input
+                type="text"
+                name="search"
+                placeholder="Search by location..."
+                value="{{ search if search else '' }}">
+
+            <button type="submit">Search</button>
+
+        </form>
+
+    </section>
+
+    <!-- Featured Properties -->
+    <section class="properties" id="properties">
+
+        <h2>Featured Properties</h2>
+
+        <div class="property-container">
+
+            {% if properties %}
+
+                {% for property in properties %}
+
+                <div class="card">
+
+                    <img src="{{ property[7] }}" alt="Property">
+
+                    <h3>{{ property[1] }}</h3>
+
+                    <p>📍 {{ property[2] }}</p>
+
+                    <p><strong>P{{ property[3] }}/month</strong></p>
+
+                    <p>🛏 {{ property[4] }} Bedrooms</p>
+
+                    <p>🛁 {{ property[5] }} Bathrooms</p>
+
+                    <p>{{ property[6] }}</p>
+
+                    <a href="/property/{{ property[0] }}">
+                        <button>View Details</button>
+                    </a>
+
+                </div>
+
+                {% endfor %}
+
+            {% else %}
+
+                <h3>No properties found.</h3>
+
+            {% endif %}
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 RentWise AI Botswana | Powered by Flask & Artificial Intelligence
+        </p>
+
+    </footer>
+
 </body>
+
 </html>

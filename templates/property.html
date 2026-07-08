@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>{{ property[1] }}</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">🏠 RentWise AI Botswana</div>
+
+<ul>
+
+<li><a href="/">Home</a></li>
+
+<li><a href="#">Properties</a></li>
+
+<li><a href="#">About</a></li>
+
+<li><a href="#">Contact</a></li>
+
+</ul>
+
+</nav>
+
+<section class="property-details">
+
+<img src="{{ property[7] }}" alt="House">
+
+<h1>{{ property[1] }}</h1>
+
+<h2>📍 {{ property[2] }}</h2>
+
+<h3>P{{ property[3] }}/month</h3>
+
+<p><strong>Bedrooms:</strong> {{ property[4] }}</p>
+
+<p><strong>Bathrooms:</strong> {{ property[5] }}</p>
+
+<p>{{ property[6] }}</p>
+
+<button>Contact Landlord</button>
+
+<br><br>
+
+<a href="/">← Back to Home</a>
+
+</section>
+
+</body>
+
+</html>
