@@ -3,13 +3,22 @@ import sqlite3
 
 app = Flask(__name__)
 
+
+def get_db_connection():
+    connection = sqlite3.connect("rentwise.db")
+    connection.row_factory = sqlite3.Row
+    return connection
+
+
+# -----------------------------
 # Home Page
+# -----------------------------
 @app.route("/")
 def home():
 
     search = request.args.get("search")
 
-    connection = sqlite3.connect("rentwise.db")
+    connection = get_db_connection()
     cursor = connection.cursor()
 
     if search:
@@ -31,21 +40,26 @@ def home():
     )
 
 
+# -----------------------------
 # Property Details Page
+# -----------------------------
 @app.route("/property/<int:id>")
 def property_details(id):
 
-    connection = sqlite3.connect("rentwise.db")
+    connection = get_db_connection()
     cursor = connection.cursor()
 
     cursor.execute(
-        "SELECT * FROM properties WHERE id=?",
+        "SELECT * FROM properties WHERE id = ?",
         (id,)
     )
 
     property = cursor.fetchone()
 
     connection.close()
+
+    if property is None:
+        return "Property not found", 404
 
     return render_template(
         "property.html",

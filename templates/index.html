@@ -4,17 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>RentWise AI Botswana</title>
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
 <body>
 
     <!-- Navigation -->
     <nav>
-
         <div class="logo">🏠 RentWise AI Botswana</div>
 
         <ul>
@@ -23,7 +22,6 @@
             <li><a href="#">About</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
-
     </nav>
 
     <!-- Hero Section -->
@@ -35,10 +33,12 @@
 
             <p>
                 RentWise AI Botswana helps tenants discover affordable,
-                verified rental properties across Botswana using Artificial Intelligence.
+                verified rental properties across Botswana.
             </p>
 
-            <button>Get Started</button>
+            <a href="#properties">
+                <button>Get Started</button>
+            </a>
 
         </div>
 
@@ -61,7 +61,7 @@
 
     </section>
 
-    <!-- Featured Properties -->
+    <!-- Properties -->
     <section class="properties" id="properties">
 
         <h2>Featured Properties</h2>
@@ -74,21 +74,27 @@
 
                 <div class="card">
 
-                    <img src="{{ property[7] }}" alt="Property">
+                    <img
+                        src="{{ url_for('static', filename=property['image']) }}"
+                        alt="{{ property['title'] }}">
 
-                    <h3>{{ property[1] }}</h3>
+                    <h3>{{ property['title'] }}</h3>
 
-                    <p>📍 {{ property[2] }}</p>
+                    <p>📍 {{ property['location'] }}</p>
 
-                    <p><strong>P{{ property[3] }}/month</strong></p>
+                    <p>
+                        <strong>
+                            P{{ property['price'] }}/month
+                        </strong>
+                    </p>
 
-                    <p>🛏 {{ property[4] }} Bedrooms</p>
+                    <p>🛏 {{ property['bedrooms'] }} Bedrooms</p>
 
-                    <p>🛁 {{ property[5] }} Bathrooms</p>
+                    <p>🛁 {{ property['bathrooms'] }} Bathrooms</p>
 
-                    <p>{{ property[6] }}</p>
+                    <p>{{ property['description'] }}</p>
 
-                    <a href="/property/{{ property[0] }}">
+                    <a href="{{ url_for('property_details', id=property['id']) }}">
                         <button>View Details</button>
                     </a>
 
@@ -110,7 +116,7 @@
     <footer>
 
         <p>
-            © 2026 RentWise AI Botswana | Powered by Flask & Artificial Intelligence
+            © 2026 RentWise AI Botswana. All Rights Reserved.
         </p>
 
     </footer>

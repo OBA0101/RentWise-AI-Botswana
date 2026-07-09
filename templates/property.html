@@ -3,60 +3,57 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ property['title'] }}</title>
 
-<title>{{ property[1] }}</title>
-
-<link rel="stylesheet"
-href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
 
 </head>
 
 <body>
 
-<nav>
+    <div class="details-container">
 
-<div class="logo">🏠 RentWise AI Botswana</div>
+        <img src="{{ url_for('static', filename=property['image']) }}"
+             class="details-image">
 
-<ul>
+        <h1>{{ property['title'] }}</h1>
 
-<li><a href="/">Home</a></li>
+        <h2>{{ property['location'] }}</h2>
 
-<li><a href="#">Properties</a></li>
+        <h3>P{{ property['price'] }}/month</h3>
 
-<li><a href="#">About</a></li>
+        <p>
 
-<li><a href="#">Contact</a></li>
+            Bedrooms:
+            {{ property['bedrooms'] }}
 
-</ul>
+            <br><br>
 
-</nav>
+            Bathrooms:
+            {{ property['bathrooms'] }}
 
-<section class="property-details">
+        </p>
 
-<img src="{{ property[7] }}" alt="House">
+        <p>
 
-<h1>{{ property[1] }}</h1>
+            {{ property['description'] }}
 
-<h2>📍 {{ property[2] }}</h2>
+        </p>
 
-<h3>P{{ property[3] }}/month</h3>
+        <button class="book-btn">
 
-<p><strong>Bedrooms:</strong> {{ property[4] }}</p>
+            Book Viewing
 
-<p><strong>Bathrooms:</strong> {{ property[5] }}</p>
+        </button>
 
-<p>{{ property[6] }}</p>
+        <br><br>
 
-<button>Contact Landlord</button>
+        <a href="/">← Back Home</a>
 
-<br><br>
-
-<a href="/">← Back to Home</a>
-
-</section>
+    </div>
 
 </body>
 

@@ -1,3 +1,7 @@
+/* ===========================
+   GENERAL
+=========================== */
+
 *{
     margin:0;
     padding:0;
@@ -7,14 +11,19 @@
 
 body{
     background:#f5f7fa;
+    color:#333;
 }
+
+/* ===========================
+   NAVIGATION
+=========================== */
 
 nav{
     display:flex;
     justify-content:space-between;
     align-items:center;
     background:#0077b6;
-    padding:20px 60px;
+    padding:18px 60px;
 }
 
 .logo{
@@ -35,47 +44,109 @@ nav ul li{
 nav ul li a{
     color:white;
     text-decoration:none;
+    font-size:18px;
+    transition:0.3s;
 }
 
+nav ul li a:hover{
+    color:#ffd60a;
+}
+
+/* ===========================
+   HERO SECTION
+=========================== */
+
 .hero{
-    height:70vh;
+    height:80vh;
     display:flex;
     justify-content:center;
     align-items:center;
     text-align:center;
+    padding:20px;
+    background:linear-gradient(to right,#caf0f8,#ffffff);
 }
 
-.hero h1{
+.hero-text h1{
     font-size:60px;
     color:#0077b6;
+    margin-bottom:20px;
 }
 
-.hero p{
-    margin:20px 0;
+.hero-text p{
+    width:70%;
+    margin:auto;
     font-size:22px;
+    line-height:1.6;
+    color:#555;
+    margin-bottom:35px;
 }
+
+/* ===========================
+   BUTTONS
+=========================== */
 
 button{
     background:#0077b6;
     color:white;
-    padding:15px 35px;
     border:none;
+    padding:15px 35px;
+    font-size:18px;
     border-radius:8px;
     cursor:pointer;
+    transition:0.3s;
 }
 
 button:hover{
     background:#023e8a;
+    transform:scale(1.05);
 }
+
+.secondary{
+    background:white;
+    color:#0077b6;
+    border:2px solid #0077b6;
+    margin-left:15px;
+}
+
+.secondary:hover{
+    background:#0077b6;
+    color:white;
+}
+
+/* ===========================
+   SEARCH SECTION
+=========================== */
+
+.search-section{
+    text-align:center;
+    margin:50px 0;
+}
+
+.search-section input{
+    width:350px;
+    padding:12px;
+    font-size:17px;
+    border:2px solid #0077b6;
+    border-radius:8px;
+}
+
+.search-section button{
+    margin-left:10px;
+}
+
+/* ===========================
+   FEATURED PROPERTIES
+=========================== */
 
 .properties{
     padding:60px;
+    text-align:center;
 }
 
 .properties h2{
-    text-align:center;
-    margin-bottom:40px;
     color:#0077b6;
+    font-size:38px;
+    margin-bottom:40px;
 }
 
 .property-container{
@@ -85,103 +156,192 @@ button:hover{
     flex-wrap:wrap;
 }
 
+/* ===========================
+   PROPERTY CARD
+=========================== */
+
 .card{
-    width:300px;
+    width:320px;
     background:white;
-    border-radius:10px;
+    border-radius:12px;
     overflow:hidden;
-    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
 }
 
 .card img{
     width:100%;
-    height:200px;
+    height:220px;
     object-fit:cover;
 }
 
 .card h3{
-    margin:15px;
+    margin-top:15px;
+    color:#0077b6;
 }
 
 .card p{
-    margin:10px 15px;
+    margin:10px;
+    font-size:17px;
 }
 
 .card button{
-    margin:15px;
+    margin:20px;
 }
 
-/* Search Section */
-
-.search-section{
-    text-align:center;
-    margin:40px 0;
-}
-
-.search-section input{
-    width:350px;
-    padding:12px;
-    font-size:16px;
-    border:2px solid #0077b6;
-    border-radius:8px;
-}
-
-.search-section button{
-    margin-left:10px;
-    padding:12px 25px;
-}
-
-/* Property Details */
+/* ===========================
+   PROPERTY DETAILS PAGE
+=========================== */
 
 .property-details{
-
     width:80%;
     margin:50px auto;
     text-align:center;
-
 }
 
 .property-details img{
-
     width:70%;
     max-width:700px;
-    height:400px;
+    height:420px;
     object-fit:cover;
     border-radius:12px;
     margin-bottom:30px;
-
 }
 
 .property-details h1{
-
     color:#0077b6;
+    font-size:42px;
     margin-bottom:15px;
-
 }
 
 .property-details h2{
-
     color:#555;
-    margin-bottom:15px;
-
+    margin-bottom:20px;
 }
 
 .property-details h3{
-
-    color:#28a745;
+    color:green;
+    font-size:30px;
     margin-bottom:20px;
-
 }
 
 .property-details p{
-
     font-size:20px;
-    margin:15px;
-
+    margin:15px 0;
+    line-height:1.6;
 }
 
-.property-details button{
+.property-details a{
+    text-decoration:none;
+    color:#0077b6;
+    font-size:18px;
+    font-weight:bold;
+}
 
-    margin-top:20px;
+.property-details a:hover{
+    color:#023e8a;
+}
 
+/* ===========================
+   FOOTER
+=========================== */
+
+footer{
+    background:#0077b6;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:60px;
+}
+
+/* ===========================
+   RESPONSIVE DESIGN
+=========================== */
+
+@media(max-width:900px){
+
+    nav{
+        flex-direction:column;
+        padding:20px;
+    }
+
+    nav ul{
+        flex-direction:column;
+        margin-top:15px;
+    }
+
+    nav ul li{
+        margin:10px 0;
+    }
+
+    .hero{
+        height:auto;
+        padding:60px 20px;
+    }
+
+    .hero-text h1{
+        font-size:40px;
+    }
+
+    .hero-text p{
+        width:100%;
+        font-size:18px;
+    }
+
+    .search-section input{
+        width:90%;
+        margin-bottom:15px;
+    }
+
+    .search-section button{
+        margin-left:0;
+    }
+
+    .property-details{
+        width:95%;
+    }
+
+    .property-details img{
+        width:100%;
+        height:auto;
+    }
+}
+
+.property-link{
+    text-decoration:none;
+    color:inherit;
+}
+
+.details-container{
+    width:70%;
+    margin:40px auto;
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 0 15px rgba(0,0,0,.15);
+}
+
+.details-image{
+    width:100%;
+    height:450px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+.book-btn{
+    background:#1abc9c;
+    color:white;
+    border:none;
+    padding:15px 35px;
+    border-radius:8px;
+    font-size:18px;
+    cursor:pointer;
+}
+
+.book-btn:hover{
+    background:#16a085;
 }
