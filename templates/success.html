@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Booking Successful</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="success-container">
+
+<div class="success-card">
+
+<h1>
+✅ Booking Confirmed!
+</h1>
+
+<p>
+
+Thank you,
+
+<strong>{{ fullname }}</strong>
+
+</p>
+
+<p>
+
+Your viewing request for
+
+<strong>{{ property['title'] }}</strong>
+
+has been received successfully.
+
+</p>
+
+<p>
+
+We will contact you shortly using
+
+<strong>{{ email }}</strong>
+
+to confirm the appointment.
+
+</p>
+
+<br>
+
+<a href="/"
+class="book-btn">
+
+Return Home
+
+</a>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

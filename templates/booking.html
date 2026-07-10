@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Book Viewing | RentWise AI Botswana</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+    <nav>
+
+        <div class="logo">
+            🏠 RentWise AI Botswana
+        </div>
+
+        <ul>
+
+            <li><a href="/">Home</a></li>
+
+            <li><a href="/">Properties</a></li>
+
+        </ul>
+
+    </nav>
+
+    <section class="booking-container">
+
+        <h1>Book a Property Viewing</h1>
+
+        <h2>{{ property['title'] }}</h2>
+
+        <p>
+            📍 {{ property['location'] }}
+        </p>
+
+        <form
+            action="/book/{{ property['id'] }}"
+            method="POST">
+
+            <label>Full Name</label>
+
+            <input
+                type="text"
+                name="fullname"
+                placeholder="Enter your full name"
+                required>
+
+            <label>Phone Number</label>
+
+            <input
+                type="text"
+                name="phone"
+                placeholder="Enter your phone number"
+                required>
+
+            <label>Preferred Viewing Date</label>
+
+            <input
+                type="date"
+                name="viewing_date"
+                required>
+
+            <button type="submit">
+
+                Book Viewing
+
+            </button>
+
+        </form>
+
+        <br>
+
+        <a href="/property/{{ property['id'] }}">
+
+            ← Back to Property
+
+        </a>
+
+    </section>
+
+</body>
+
+</html>

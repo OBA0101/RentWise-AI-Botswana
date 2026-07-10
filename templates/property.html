@@ -2,58 +2,74 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-
-    <title>{{ property['title'] }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ property['title'] }} | RentWise AI Botswana</title>
 
     <link rel="stylesheet"
           href="{{ url_for('static', filename='css/style.css') }}">
-
 </head>
 
 <body>
 
-    <div class="details-container">
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            🏠 RentWise AI Botswana
+        </div>
 
-        <img src="{{ url_for('static', filename=property['image']) }}"
-             class="details-image">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/">Properties</a></li>
+        </ul>
+    </nav>
 
-        <h1>{{ property['title'] }}</h1>
+    <!-- Property Details -->
+    <section class="details-container">
 
-        <h2>{{ property['location'] }}</h2>
+        <img
+            src="{{ url_for('static', filename=property['image']) }}"
+            alt="{{ property['title'] }}"
+            class="details-image">
 
-        <h3>P{{ property['price'] }}/month</h3>
+        <div class="details-content">
 
-        <p>
+            <h1>{{ property['title'] }}</h1>
 
-            Bedrooms:
-            {{ property['bedrooms'] }}
+            <h2>📍 {{ property['location'] }}</h2>
+
+            <h3>P{{ property['price'] }}/month</h3>
+
+            <hr>
+
+            <p><strong>Bedrooms:</strong> {{ property['bedrooms'] }}</p>
+
+            <p><strong>Bathrooms:</strong> {{ property['bathrooms'] }}</p>
+
+            <p><strong>Description:</strong></p>
+
+            <p>{{ property['description'] }}</p>
+
+            <br>
+
+            <a href="{{ url_for('book_property', id=property['id']) }}"
+               class="book-btn">
+                📅 Book Viewing
+            </a>
+
+            <button class="contact-btn">
+                📞 Contact Landlord
+            </button>
 
             <br><br>
 
-            Bathrooms:
-            {{ property['bathrooms'] }}
+            <a href="/">
+                ← Back to Home
+            </a>
 
-        </p>
+        </div>
 
-        <p>
-
-            {{ property['description'] }}
-
-        </p>
-
-        <button class="book-btn">
-
-            Book Viewing
-
-        </button>
-
-        <br><br>
-
-        <a href="/">← Back Home</a>
-
-    </div>
+    </section>
 
 </body>
 

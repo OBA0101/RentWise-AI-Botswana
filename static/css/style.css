@@ -19,37 +19,36 @@ body{
 =========================== */
 
 nav{
+    background:#0077b6;
+    color:white;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    background:#0077b6;
-    padding:18px 60px;
+    padding:20px 10%;
 }
 
 .logo{
-    color:white;
-    font-size:28px;
+    font-size:24px;
     font-weight:bold;
 }
 
 nav ul{
-    display:flex;
     list-style:none;
+    display:flex;
 }
 
 nav ul li{
-    margin-left:25px;
+    margin-left:20px;
 }
 
 nav ul li a{
     color:white;
     text-decoration:none;
-    font-size:18px;
-    transition:0.3s;
+    font-weight:bold;
 }
 
 nav ul li a:hover{
-    color:#ffd60a;
+    color:#caf0f8;
 }
 
 /* ===========================
@@ -57,193 +56,264 @@ nav ul li a:hover{
 =========================== */
 
 .hero{
-    height:80vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
     text-align:center;
-    padding:20px;
-    background:linear-gradient(to right,#caf0f8,#ffffff);
+    padding:80px 20px;
+    background:#caf0f8;
 }
 
-.hero-text h1{
-    font-size:60px;
-    color:#0077b6;
+.hero h1{
+    font-size:45px;
     margin-bottom:20px;
 }
 
-.hero-text p{
-    width:70%;
-    margin:auto;
-    font-size:22px;
-    line-height:1.6;
-    color:#555;
-    margin-bottom:35px;
+.hero p{
+    font-size:20px;
+    margin-bottom:25px;
+}
+
+.hero button{
+    background:#0077b6;
+    color:white;
+    border:none;
+    padding:15px 30px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.hero button:hover{
+    background:#023e8a;
+}
+
+/* ===========================
+   SEARCH
+=========================== */
+
+.search-box{
+    text-align:center;
+    margin:30px;
+}
+
+.search-box input{
+    width:300px;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:6px;
+}
+
+.search-box button{
+    padding:12px 25px;
+    background:#0077b6;
+    color:white;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.search-box button:hover{
+    background:#023e8a;
+}
+
+/* ===========================
+   PROPERTY GRID
+=========================== */
+
+.properties{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:25px;
+    padding:40px;
+}
+
+.property-card{
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.property-card:hover{
+    transform:translateY(-5px);
+    transition:.3s;
+}
+
+.property-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.property-info{
+    padding:20px;
+}
+
+.property-info h3{
+    color:#0077b6;
+    margin-bottom:10px;
+}
+
+.property-info p{
+    margin:8px 0;
+}
+
+.view-btn{
+    display:inline-block;
+    margin-top:15px;
+    background:#0077b6;
+    color:white;
+    padding:10px 20px;
+    border-radius:6px;
+    text-decoration:none;
+}
+
+.view-btn:hover{
+    background:#023e8a;
+}
+
+/* ===========================
+   PROPERTY DETAILS
+=========================== */
+
+.details-container{
+    width:85%;
+    margin:40px auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+}
+
+.details-image{
+    width:100%;
+    border-radius:10px;
+}
+
+.details-content h1{
+    color:#0077b6;
+    margin-bottom:15px;
+}
+
+.details-content h2{
+    color:#444;
+    margin-bottom:10px;
+}
+
+.details-content h3{
+    color:#16a085;
+    margin-bottom:20px;
+}
+
+.details-content p{
+    margin-bottom:15px;
+    line-height:1.7;
 }
 
 /* ===========================
    BUTTONS
 =========================== */
 
-button{
-    background:#0077b6;
+.book-btn{
+    display:inline-block;
+    background:#16a085;
     color:white;
-    border:none;
-    padding:15px 35px;
-    font-size:18px;
-    border-radius:8px;
-    cursor:pointer;
-    transition:0.3s;
-}
-
-button:hover{
-    background:#023e8a;
-    transform:scale(1.05);
-}
-
-.secondary{
-    background:white;
-    color:#0077b6;
-    border:2px solid #0077b6;
-    margin-left:15px;
-}
-
-.secondary:hover{
-    background:#0077b6;
-    color:white;
-}
-
-/* ===========================
-   SEARCH SECTION
-=========================== */
-
-.search-section{
-    text-align:center;
-    margin:50px 0;
-}
-
-.search-section input{
-    width:350px;
-    padding:12px;
-    font-size:17px;
-    border:2px solid #0077b6;
-    border-radius:8px;
-}
-
-.search-section button{
-    margin-left:10px;
-}
-
-/* ===========================
-   FEATURED PROPERTIES
-=========================== */
-
-.properties{
-    padding:60px;
-    text-align:center;
-}
-
-.properties h2{
-    color:#0077b6;
-    font-size:38px;
-    margin-bottom:40px;
-}
-
-.property-container{
-    display:flex;
-    justify-content:center;
-    gap:30px;
-    flex-wrap:wrap;
-}
-
-/* ===========================
-   PROPERTY CARD
-=========================== */
-
-.card{
-    width:320px;
-    background:white;
-    border-radius:12px;
-    overflow:hidden;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
-    transition:0.3s;
-}
-
-.card:hover{
-    transform:translateY(-10px);
-}
-
-.card img{
-    width:100%;
-    height:220px;
-    object-fit:cover;
-}
-
-.card h3{
-    margin-top:15px;
-    color:#0077b6;
-}
-
-.card p{
-    margin:10px;
-    font-size:17px;
-}
-
-.card button{
-    margin:20px;
-}
-
-/* ===========================
-   PROPERTY DETAILS PAGE
-=========================== */
-
-.property-details{
-    width:80%;
-    margin:50px auto;
-    text-align:center;
-}
-
-.property-details img{
-    width:70%;
-    max-width:700px;
-    height:420px;
-    object-fit:cover;
-    border-radius:12px;
-    margin-bottom:30px;
-}
-
-.property-details h1{
-    color:#0077b6;
-    font-size:42px;
-    margin-bottom:15px;
-}
-
-.property-details h2{
-    color:#555;
-    margin-bottom:20px;
-}
-
-.property-details h3{
-    color:green;
-    font-size:30px;
-    margin-bottom:20px;
-}
-
-.property-details p{
-    font-size:20px;
-    margin:15px 0;
-    line-height:1.6;
-}
-
-.property-details a{
     text-decoration:none;
-    color:#0077b6;
-    font-size:18px;
+    padding:14px 28px;
+    border-radius:8px;
+    margin-right:10px;
     font-weight:bold;
 }
 
-.property-details a:hover{
-    color:#023e8a;
+.book-btn:hover{
+    background:#138d75;
+}
+
+.contact-btn{
+    background:#0077b6;
+    color:white;
+    border:none;
+    padding:14px 28px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.contact-btn:hover{
+    background:#023e8a;
+}
+
+/* ===========================
+   BOOKING PAGE
+=========================== */
+
+.booking-container{
+    width:60%;
+    margin:40px auto;
+    background:white;
+    padding:35px;
+    border-radius:12px;
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+}
+
+.booking-container h1{
+    color:#0077b6;
+    margin-bottom:20px;
+}
+
+.booking-container h2{
+    margin-bottom:10px;
+}
+
+.booking-container form{
+    margin-top:25px;
+}
+
+.booking-container label{
+    display:block;
+    margin-top:15px;
+    margin-bottom:8px;
+    font-weight:bold;
+}
+
+.booking-container input{
+    width:100%;
+    padding:14px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:16px;
+    margin-bottom:15px;
+}
+
+/* ===========================
+   SUCCESS PAGE
+=========================== */
+
+.success-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:80vh;
+}
+
+.success-card{
+    width:600px;
+    background:white;
+    padding:40px;
+    text-align:center;
+    border-radius:12px;
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+}
+
+.success-card h1{
+    color:#16a085;
+    margin-bottom:20px;
+}
+
+.success-card p{
+    margin-bottom:15px;
+    line-height:1.8;
 }
 
 /* ===========================
@@ -251,97 +321,36 @@ button:hover{
 =========================== */
 
 footer{
+    text-align:center;
     background:#0077b6;
     color:white;
-    text-align:center;
-    padding:25px;
-    margin-top:60px;
+    padding:20px;
+    margin-top:40px;
 }
 
 /* ===========================
-   RESPONSIVE DESIGN
+   RESPONSIVE
 =========================== */
 
-@media(max-width:900px){
+@media(max-width:768px){
+
+    .details-container{
+        grid-template-columns:1fr;
+    }
+
+    .properties{
+        grid-template-columns:1fr;
+    }
 
     nav{
         flex-direction:column;
-        padding:20px;
     }
 
     nav ul{
-        flex-direction:column;
         margin-top:15px;
     }
 
-    nav ul li{
-        margin:10px 0;
-    }
-
-    .hero{
-        height:auto;
-        padding:60px 20px;
-    }
-
-    .hero-text h1{
-        font-size:40px;
-    }
-
-    .hero-text p{
-        width:100%;
-        font-size:18px;
-    }
-
-    .search-section input{
+    .booking-container{
         width:90%;
-        margin-bottom:15px;
     }
-
-    .search-section button{
-        margin-left:0;
-    }
-
-    .property-details{
-        width:95%;
-    }
-
-    .property-details img{
-        width:100%;
-        height:auto;
-    }
-}
-
-.property-link{
-    text-decoration:none;
-    color:inherit;
-}
-
-.details-container{
-    width:70%;
-    margin:40px auto;
-    background:white;
-    padding:30px;
-    border-radius:12px;
-    box-shadow:0 0 15px rgba(0,0,0,.15);
-}
-
-.details-image{
-    width:100%;
-    height:450px;
-    object-fit:cover;
-    border-radius:10px;
-}
-
-.book-btn{
-    background:#1abc9c;
-    color:white;
-    border:none;
-    padding:15px 35px;
-    border-radius:8px;
-    font-size:18px;
-    cursor:pointer;
-}
-
-.book-btn:hover{
-    background:#16a085;
 }
