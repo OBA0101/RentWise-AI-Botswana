@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Landlord Dashboard | RentWise AI Botswana</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<nav>
+
+    <div class="logo">
+        🏠 RentWise AI Botswana
+    </div>
+
+    <ul>
+
+        <li><a href="/">Home</a></li>
+
+        <li><a href="/dashboard">Dashboard</a></li>
+
+    </ul>
+
+</nav>
+
+<div class="dashboard">
+
+    <h1>Landlord Dashboard</h1>
+
+    <div style="margin-bottom:30px;">
+
+        <a href="{{ url_for('add_property') }}" class="book-btn">
+            ➕ Add New Property
+        </a>
+
+    </div>
+
+    <div class="dashboard-cards">
+
+        <div class="card">
+
+            <h2>{{ total_properties }}</h2>
+
+            <p>Total Properties</p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>{{ total_bookings }}</h2>
+
+            <p>Total Bookings</p>
+
+        </div>
+
+    </div>
+
+    <h2>Recent Bookings</h2>
+
+    <table>
+
+        <thead>
+
+            <tr>
+
+                <th>Property</th>
+
+                <th>Customer</th>
+
+                <th>Email</th>
+
+                <th>Phone</th>
+
+                <th>Viewing Date</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            {% for booking in bookings %}
+
+            <tr>
+
+                <td>{{ booking['title'] }}</td>
+
+                <td>{{ booking['fullname'] }}</td>
+
+                <td>{{ booking['email'] }}</td>
+
+                <td>{{ booking['phone'] }}</td>
+
+                <td>{{ booking['viewing_date'] }}</td>
+
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+
+    </table>
+
+</div>
+
+</body>
+
+</html>
